@@ -2,7 +2,7 @@
   "name": "hurler",
   "displayName": "Hurler",
   "description": "Execute Hurl HTTP request files directly from VS Code with environment variable support",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "sumeet221b",
   "icon": "icon.png",
   "engines": {

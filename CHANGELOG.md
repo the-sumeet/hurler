@@ -2,6 +2,11 @@
 
 All notable changes to the "hurler" extension will be documented in this file.
 
+## [0.0.2] - 2025-01-22
+
+### Added
+- Extension icon for VS Code marketplace and extension panel
+
 ## [0.0.1] - 2025-01-22
 
 ### Added
