@@ -4,6 +4,7 @@
   "description": "Execute Hurl HTTP request files directly from VS Code with environment variable support",
   "version": "0.0.1",
   "publisher": "sumeet221b",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.102.0"
   },
