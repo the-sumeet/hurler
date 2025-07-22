@@ -3,6 +3,7 @@
   "displayName": "Hurler",
   "description": "Execute Hurl HTTP request files directly from VS Code with environment variable support",
   "version": "0.0.1",
+  "publisher": "sumeet221b",
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -17,6 +18,16 @@
     "testing",
     "requests"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-sumeet/hurler"
+  },
+  "homepage": "https://github.com/the-sumeet/hurler#readme",
+  "bugs": {
+    "url": "https://github.com/the-sumeet/hurler/issues"
+  },
+  "author": "Your Name",
+  "license": "GPL-3.0",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
