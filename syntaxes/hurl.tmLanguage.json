@@ -1,0 +1,182 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Hurl",
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#json"
+    }
+  ],
+  "repository": {
+    "request": {
+      "patterns": [
+        {
+          "name": "keyword.control.http.method.hurl",
+          "match": "\\b(GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS|CONNECT|TRACE)\\b"
+        },
+        {
+          "name": "string.unquoted.url.hurl",
+          "match": "(?<=\\s)(https?://[^\\s]+|/[^\\s]*)"
+        },
+        {
+          "name": "keyword.other.http.version.hurl",
+          "match": "\\bHTTP/[0-9]\\.[0-9]\\b"
+        },
+        {
+          "name": "entity.name.tag.header.hurl",
+          "match": "^([A-Za-z0-9-]+):"
+        },
+        {
+          "name": "string.unquoted.header.value.hurl",
+          "match": "(?<=:)\\s*(.*)$"
+        }
+      ]
+    },
+    "response": {
+      "patterns": [
+        {
+          "name": "keyword.control.response.hurl",
+          "match": "\\b(HTTP/[0-9]\\.[0-9])\\s+([0-9]{3})"
+        },
+        {
+          "name": "constant.numeric.status.hurl",
+          "match": "\\b[0-9]{3}\\b"
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.hurl",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "variable": {
+      "patterns": [
+        {
+          "name": "variable.other.hurl",
+          "match": "\\{\\{[^}]+\\}\\}"
+        }
+      ]
+    },
+    "json": {
+      "patterns": [
+        {
+          "name": "punctuation.definition.array.begin.json.hurl",
+          "match": "\\["
+        },
+        {
+          "name": "punctuation.definition.array.end.json.hurl",
+          "match": "\\]"
+        },
+        {
+          "name": "punctuation.definition.dictionary.begin.json.hurl",
+          "match": "\\{"
+        },
+        {
+          "name": "punctuation.definition.dictionary.end.json.hurl",
+          "match": "\\}"
+        },
+        {
+          "name": "punctuation.separator.dictionary.key-value.json.hurl",
+          "match": ":"
+        },
+        {
+          "name": "punctuation.separator.dictionary.pair.json.hurl",
+          "match": ","
+        },
+        {
+          "name": "string.quoted.double.json.hurl",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.json.hurl",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "constant.numeric.json.hurl",
+          "match": "\\b-?\\d+(?:\\.\\d+)?(?:[eE][+-]?\\d+)?\\b"
+        },
+        {
+          "name": "constant.language.json.hurl",
+          "match": "\\b(true|false|null)\\b"
+        }
+      ]
+    },
+    "asserts": {
+      "patterns": [
+        {
+          "name": "keyword.control.section.hurl",
+          "match": "^\\[Asserts\\]\\s*$"
+        },
+        {
+          "name": "keyword.control.assert.hurl",
+          "match": "\\b(status|header|cookie|body|xpath|jsonpath|regex|duration)\\b"
+        },
+        {
+          "name": "keyword.operator.assert.hurl",
+          "match": "\\b(equals|notEquals|exists|notExists|startsWith|endsWith|contains|notContains|matches|notMatches|greaterThan|greaterThanOrEquals|lessThan|lessThanOrEquals|count)\\b"
+        },
+        {
+          "name": "keyword.operator.assert.hurl",
+          "match": "\\b(==|!=|>|>=|<|<=)\\b"
+        }
+      ]
+    },
+    "captures": {
+      "patterns": [
+        {
+          "name": "keyword.control.section.hurl",
+          "match": "^\\[Captures\\]\\s*$"
+        },
+        {
+          "name": "keyword.control.capture.hurl",
+          "match": "\\b(status|header|cookie|body|xpath|jsonpath|regex)\\b"
+        }
+      ]
+    },
+    "query": {
+      "patterns": [
+        {
+          "name": "keyword.control.section.hurl",
+          "match": "^\\[QueryStringParams\\]\\s*$"
+        },
+        {
+          "name": "keyword.control.section.hurl",
+          "match": "^\\[FormParams\\]\\s*$"
+        },
+        {
+          "name": "keyword.control.section.hurl",
+          "match": "^\\[MultipartFormData\\]\\s*$"
+        },
+        {
+          "name": "keyword.control.section.hurl",
+          "match": "^\\[Cookies\\]\\s*$"
+        },
+        {
+          "name": "keyword.control.section.hurl",
+          "match": "^\\[BasicAuth\\]\\s*$"
+        },
+        {
+          "name": "keyword.control.section.hurl",
+          "match": "^\\[Options\\]\\s*$"
+        },
+        {
+          "name": "entity.name.tag.key.hurl",
+          "match": "^\\s*([^:=\\s]+)\\s*:"
+        },
+        {
+          "name": "string.unquoted.value.hurl",
+          "match": "(?<=:)\\s*(.*)$"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.hurl"
+}
